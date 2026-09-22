@@ -1,0 +1,2 @@
+# Core research code uses the Python 3.11 standard library only.
+# No third-party packages are required to reproduce the laboratory run.

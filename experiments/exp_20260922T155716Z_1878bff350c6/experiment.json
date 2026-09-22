@@ -1,0 +1,518 @@
+{
+  "aegis_version": "0.1.0",
+  "audit": {
+    "causality_indices_checked": [
+      1535,
+      1559,
+      1583
+    ],
+    "findings": [
+      "IN_SAMPLE_NOT_COMPUTED",
+      "HOLDOUT_NOT_EXAMINED"
+    ],
+    "future_information_in_events": false,
+    "invalid": false,
+    "valid": true
+  },
+  "created_at_utc": "2026-09-22T15:57:16Z",
+  "dataset": {
+    "dataset_id": "SYNTHETIC_LAB_EURUSD_H1_V1",
+    "end": "2018-12-31T23:00:00Z",
+    "event_join_allowed": false,
+    "financing_measured": false,
+    "not_market_data": true,
+    "notes": "Laboratory clock uses 2010-2018 weekday labels so walk-forward year splits can be tested. These timestamps are not historical market dates. Do not join this file to the real event catalog. Do not describe a result from this file as evidence about EUR/USD.",
+    "rows": 56304,
+    "sha256": "e8b5a294111983c8897363c5baf45c8798c36649b66edb6fe7344e2608c9bcba",
+    "source": "SYNTHETIC",
+    "start": "2010-01-04T00:00:00Z",
+    "synthetic": true
+  },
+  "decision_count": 2281,
+  "experiment_id": "exp_20260922T155716Z_1878bff350c6",
+  "folds": [
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.04038772213247173,
+        "LONG_SUCCESS": 0.4789983844911147,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.4806138933764136
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "expanding",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1238,
+      "test_rows": 261,
+      "test_year": 2015,
+      "trades": 0,
+      "train_rows": 1238,
+      "train_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.04038772213247173,
+        "LONG_SUCCESS": 0.4789983844911147,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.4806138933764136
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "rolling",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1238,
+      "test_rows": 261,
+      "test_year": 2015,
+      "trades": 0,
+      "train_rows": 1238,
+      "train_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.03935957304869913,
+        "LONG_SUCCESS": 0.4809873248832555,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.47965310206804534
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "expanding",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1499,
+      "test_rows": 262,
+      "test_year": 2016,
+      "trades": 0,
+      "train_rows": 1499,
+      "train_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.03837298541826554,
+        "LONG_SUCCESS": 0.4727551803530315,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.488871834228703
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "rolling",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1303,
+      "test_rows": 262,
+      "test_year": 2016,
+      "trades": 0,
+      "train_rows": 1303,
+      "train_years": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.039750141964792735,
+        "LONG_SUCCESS": 0.47643384440658715,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.4838160136286201
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "expanding",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1761,
+      "test_rows": 260,
+      "test_year": 2017,
+      "trades": 0,
+      "train_rows": 1761,
+      "train_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.04141104294478527,
+        "LONG_SUCCESS": 0.4708588957055215,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.48773006134969327
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "rolling",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1304,
+      "test_rows": 260,
+      "test_year": 2017,
+      "trades": 0,
+      "train_rows": 1304,
+      "train_years": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.04057397328055418,
+        "LONG_SUCCESS": 0.4715487382483919,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.48787728847105394
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "expanding",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 2021,
+      "test_rows": 259,
+      "test_year": 2018,
+      "trades": 0,
+      "train_rows": 2021,
+      "train_years": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ]
+    },
+    {
+      "base_rates": {
+        "AMBIGUOUS_PATH": 0.040644171779141106,
+        "LONG_SUCCESS": 0.4639570552147239,
+        "NO_RESOLUTION": 0.0,
+        "SHORT_SUCCESS": 0.495398773006135
+      },
+      "cosine_disagreements": 0,
+      "cosine_used_for_trades": false,
+      "embargoed_rows": 1,
+      "holdout_years": [
+        2019
+      ],
+      "procedure": "rolling",
+      "retrieval_violations": {
+        "future_neighbor": 0,
+        "outcome_not_yet_known": 0
+      },
+      "scaler_rows": 1304,
+      "test_rows": 259,
+      "test_year": 2018,
+      "trades": 0,
+      "train_rows": 1304,
+      "train_years": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ]
+    }
+  ],
+  "holdout": {
+    "bars_excluded": 1,
+    "examined": false,
+    "reason": "Locked until features, retrieval, model family, costs, and the decision rule are frozen, then run once.",
+    "years": [
+      2019
+    ]
+  },
+  "hypothesis": {
+    "barrier_atr": 1.0,
+    "commission_pips_per_side": 0.0,
+    "financing_is_measured": false,
+    "financing_pips_per_day": 0.2,
+    "granularity": "H1",
+    "holdout_years": 1,
+    "horizon_bars": 24,
+    "hypothesis": "On a completed H1 bar, the causal normalized state of price, volatility, spread, and session does not contain enough information to justify a long or short barrier trade after bid/ask execution, declared slippage, declared adverse financing, and commission, once training labels that overlap the test window have been purged.",
+    "hypothesis_id": "H0_EURUSD_H1_BARRIER_V1",
+    "instrument": "EUR_USD",
+    "knn_k": 25,
+    "logit_l2": 1.0,
+    "logit_lr": 0.15,
+    "logit_steps": 250,
+    "margin_over_train_base": 0.05,
+    "min_margin_vs_opposite": 0.05,
+    "min_neighbors": 20,
+    "min_probability": 0.4,
+    "min_trades_for_pattern_claim": 100,
+    "min_train_years": 5,
+    "retrieval_principal": "euclidean",
+    "seed": 20260922,
+    "slippage_pips_per_side": 0.2,
+    "slow_vol_bars": 120,
+    "stop_atr": 1.0,
+    "stride_bars": 24,
+    "vol_percentile_window": 1512
+  },
+  "in_sample_performance_computed": false,
+  "limitations": [
+    "One instrument and one timeframe. A result does not transfer to the rest of the universe.",
+    "In-sample fit is not reported, because it is not evidence.",
+    "The locked final year is not scored by the research command.",
+    "Same-bar barrier order is unidentified. Those paths are ambiguous, not wins.",
+    "Financing in the laboratory settings is an adverse declaration, not a measured swap.",
+    "Slippage is an assumption. The quote spread is taken from the bar, where the bar has a bid and an ask.",
+    "Logistic outputs are regularized one-versus-rest scores normalized to sum to one. They are not calibrated probabilities.",
+    "Euclidean retrieval is the pre-registered memory method. Cosine is reported and is not used to pick a result.",
+    "Sharpe-type and Sortino-type ratios are descriptive. Overlapping volatility means the returns are not independent.",
+    "Session flags use a local 08:00-17:00 research convention, not an exchange session definition.",
+    "No cross-asset feature is used. Risk-on and risk-off are therefore not classified.",
+    "A language model is not allowed to replace this calculation or to invent a price."
+  ],
+  "live_execution": false,
+  "oanda_live": false,
+  "oos": {
+    "expanding": {
+      "annualized_return_estimate": null,
+      "average_holding_bars": null,
+      "average_loser_pips": null,
+      "average_winner_pips": null,
+      "best_five_pips": [],
+      "best_year_share_of_net": null,
+      "by_instrument": {},
+      "by_regime": {},
+      "by_year": {},
+      "expectancy_pips": null,
+      "exposure": 0.0,
+      "extreme_volatility": {
+        "expectancy_pips": null,
+        "net_pips": 0.0,
+        "trades": 0
+      },
+      "longest_losing_streak": 0,
+      "max_drawdown_fraction": 0.0,
+      "max_drawdown_pips": 0.0,
+      "mean_net_return": null,
+      "net_pips": 0.0,
+      "net_without_best_five_trades": 0,
+      "oos_days": 0,
+      "other_regimes": {
+        "expectancy_pips": null,
+        "net_pips": 0.0,
+        "trades": 0
+      },
+      "pnl_timing": "intraday_mark_to_exit_side_quote_costs_booked_at_exit",
+      "profit_factor": null,
+      "sharpe_definition": "daily_simple_returns_including_flat_days_sqrt_252_not_a_significance_test",
+      "sharpe_type": null,
+      "sortino_type": null,
+      "trades": 0,
+      "transaction_cost_pips": 0,
+      "turnover_trades": 0,
+      "wealth_index": "constant_notional_additive",
+      "win_loss_ratio": null,
+      "win_rate": null
+    },
+    "rolling": {
+      "annualized_return_estimate": null,
+      "average_holding_bars": null,
+      "average_loser_pips": null,
+      "average_winner_pips": null,
+      "best_five_pips": [],
+      "best_year_share_of_net": null,
+      "by_instrument": {},
+      "by_regime": {},
+      "by_year": {},
+      "expectancy_pips": null,
+      "exposure": 0.0,
+      "extreme_volatility": {
+        "expectancy_pips": null,
+        "net_pips": 0.0,
+        "trades": 0
+      },
+      "longest_losing_streak": 0,
+      "max_drawdown_fraction": 0.0,
+      "max_drawdown_pips": 0.0,
+      "mean_net_return": null,
+      "net_pips": 0.0,
+      "net_without_best_five_trades": 0,
+      "oos_days": 0,
+      "other_regimes": {
+        "expectancy_pips": null,
+        "net_pips": 0.0,
+        "trades": 0
+      },
+      "pnl_timing": "intraday_mark_to_exit_side_quote_costs_booked_at_exit",
+      "profit_factor": null,
+      "sharpe_definition": "daily_simple_returns_including_flat_days_sqrt_252_not_a_significance_test",
+      "sharpe_type": null,
+      "sortino_type": null,
+      "trades": 0,
+      "transaction_cost_pips": 0,
+      "turnover_trades": 0,
+      "wealth_index": "constant_notional_additive",
+      "win_loss_ratio": null,
+      "win_rate": null
+    }
+  },
+  "point_in_time": {
+    "agreement": {
+      "event_vs_market": null,
+      "quant_vs_rag": false
+    },
+    "analogue_detail_note": "The package reports the outcome distribution of the retrieved neighbours. Individual analogue timestamps are not copied into this summary row.",
+    "analogue_detail_retained": false,
+    "confidence": 0.0,
+    "decision_time_definition": "bar_close_utc",
+    "event_memory": {
+      "active_event": null,
+      "future_information_detected": false,
+      "historical_analogues": []
+    },
+    "evidence_summary": "At 2018-12-28T00:00:00Z the measurable regime label is NORMAL (heuristic confidence 0.4, not a probability). Logistic estimates \u2014 LONG_SUCCESS 0.324, SHORT_SUCCESS 0.330, NO_RESOLUTION 0.000, AMBIGUOUS_PATH 0.346 \u2014 are model output, not frequencies. Euclidean memory returned 25 prior states with cutoff verified True. Median analogue forward midpoint return: -0.000107. Event memory contributed 0 usable events. Classification INSUFFICIENT_DATA is a research label. It is not an order.",
+    "instrument": "EUR_USD",
+    "live_execution": false,
+    "market_memory": {
+      "cosine_used_for_classification": false,
+      "historical_cutoff_verified": true,
+      "matches": 25,
+      "median_forward_outcome": -0.00010673965321761347,
+      "negative_outcome_probability": 0.56,
+      "positive_outcome_probability": 0.44,
+      "retrieval": "euclidean"
+    },
+    "quant_model": {
+      "ambiguous_path_probability": 0.3460448158278453,
+      "long_probability": 0.3241134064246988,
+      "no_trade_probability": 0.0,
+      "probability_kind": "ovr_normalized_estimate",
+      "short_probability": 0.3298417777474558
+    },
+    "regime": {
+      "classification": "NORMAL",
+      "confidence": 0.4,
+      "confidence_kind": "heuristic_not_probability"
+    },
+    "research_classification": "INSUFFICIENT_DATA",
+    "research_only": true,
+    "risk_flags": [
+      "RESEARCH_ONLY",
+      "NOT_A_TRADE_INSTRUCTION",
+      "LIVE_EXECUTION_DISABLED",
+      "SYNTHETIC_DATA",
+      "FINANCING_NOT_MEASURED",
+      "SLIPPAGE_IS_ASSUMPTION"
+    ],
+    "timeframe": "H1",
+    "timestamp": "2018-12-28T00:00:00Z",
+    "uncertainty": "This timestamp belongs to a synthetic laboratory clock. Nothing in the package is evidence about a traded market. OHLC bars do not reveal which barrier printed first inside a single bar. Probabilities are not calibrated. Nearest-neighbor outcomes are a sample, not a destiny. Slippage and financing in this package follow the frozen declaration, not a measured swap curve, unless financing_measured is true. A bias at one timestamp is not walk-forward evidence."
+  },
+  "protocol_version": "2026-09-22",
+  "quality": {
+    "bad_ohlc": 0,
+    "crossed_markets": 0,
+    "duplicate_timestamps": 0,
+    "incomplete": 0,
+    "large_gaps": 0,
+    "missing_volume": 0,
+    "non_monotonic": 0,
+    "non_positive_prices": 0,
+    "rows": 56304,
+    "unsafe_for_research": false,
+    "verdict": "PASS",
+    "warnings": []
+  },
+  "research_only": true,
+  "robustness": {
+    "best_year_share_of_net": null,
+    "diagnostic_not_for_selection": true,
+    "net_without_best_five": 0,
+    "note": "These stresses do not choose a new parameter. The frozen rule remains the principal result.",
+    "principal_net_pips": 0.0,
+    "sign_flips_without_best_five": false,
+    "slippage_2x_expectancy_pips": null,
+    "slippage_2x_net_pips": null
+  },
+  "settings_sha256": "c5cd9bb6c644d7cfb4ce9de59a3b3201936381500651de68b2c480df016d0b7f",
+  "verdict": {
+    "laboratory_process_verdict": "NO_EDGE",
+    "market_classification": "INSUFFICIENT_DATA",
+    "reason_codes": [
+      "NO_TRADES_UNDER_FROZEN_RULE",
+      "SYNTHETIC_OR_NON_MARKET_DATA",
+      "HOLDOUT_NOT_EXAMINED",
+      "LIVE_EXECUTION_NOT_AUTHORIZED"
+    ],
+    "research_only": true,
+    "survives_as_live_authorization": false
+  }
+}

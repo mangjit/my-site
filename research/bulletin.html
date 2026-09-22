@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aegis research bulletin — not a trade recommendation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,550;0,6..72,650;1,6..72,450&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f3efe6;
+      --paper-2: #e7e0d4;
+      --ink: #1c1915;
+      --muted: #6d665c;
+      --rule: #d4cbc0;
+      --seal: #7c2f2a;
+      --seal-ink: #f6f1e8;
+      --good: #1e4d3a;
+      --warn: #8a5a12;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); color: var(--ink); }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 28px 96px; }
+    .status {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 28px;
+    }
+    .status span {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--ink); padding: 5px 8px;
+    }
+    .kicker {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+    }
+    h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 550; font-size: clamp(40px, 6vw, 68px);
+      line-height: 0.96; letter-spacing: -0.03em; margin: 8px 0 12px;
+    }
+    h2 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 550; font-size: 32px; letter-spacing: -0.02em;
+      margin: 56px 0 12px;
+    }
+    h3 { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 28px 0 8px; }
+    p { margin: 0 0 14px; }
+    .lede { font-size: 20px; max-width: 42rem; }
+    .banner {
+      background: #241c18; color: var(--seal-ink); padding: 18px 20px; margin: 22px 0;
+    }
+    .banner strong { color: #f0c9a0; }
+    .verdict {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px;
+      border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+      padding: 22px 0; margin: 12px 0 8px;
+    }
+    .verdict b {
+      display: block; font-family: Newsreader, Georgia, serif;
+      font-size: clamp(36px, 5vw, 54px); line-height: 0.95; font-weight: 550; letter-spacing: -0.03em;
+    }
+    .meta { color: var(--muted); font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 14.5px; }
+    th, td { text-align: left; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+    td.num, th.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; }
+    .ladder { display: grid; grid-template-columns: 180px 1fr; gap: 8px 18px; margin: 18px 0 8px; }
+    .ladder dt { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--seal); padding-top: 3px; }
+    .ladder dd { margin: 0 0 10px; }
+    .layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .layer { border: 1px solid var(--rule); padding: 12px 14px; background: rgba(255,255,255,0.35); }
+    .layer span { display: block; font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+    .json {
+      background: #1c1915; color: #f3efe6; padding: 16px; overflow: auto; max-height: 460px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; line-height: 1.45;
+    }
+    figure { margin: 18px 0; }
+    figcaption { color: var(--muted); font-size: 13px; margin-top: 6px; }
+    .pass { color: var(--good); }
+    .fail { color: var(--seal); font-weight: 600; }
+    ul { padding-left: 18px; }
+    li { margin: 4px 0; }
+    footer { margin-top: 64px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--rule); padding-top: 16px; }
+    a { color: var(--seal); }
+    @media (max-width: 720px) {
+      .verdict, .ladder, .layers { grid-template-columns: 1fr; }
+      .wrap { padding: 28px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="kicker">Aegis · research only · Mangjit Singh</p>
+    <h1>What was knowable then, and nothing after.</h1>
+    <p class="lede">This bulletin does not recommend a trade. It records whether a hypothesis, frozen before the test years were scored, contained information that survived costs, purge rules, and a second training window.</p>
+    <div class="status">
+      <span>Research only</span>
+      <span>Live execution disabled</span>
+      <span>OANDA live forbidden</span>
+      <span>Not investment advice</span>
+    </div>
+    <div class='banner'><strong>Synthetic laboratory data.</strong> Laboratory clock uses 2010-2018 weekday labels so walk-forward year splits can be tested. These timestamps are not historical market dates. Do not join this file to the real event catalog. Do not describe a result from this file as evidence about EUR/USD. Do not read the ledger as evidence about EUR/USD, gold, or any other traded price.</div>
+    <h2>Latest examination</h2>
+    <p class="meta">exp_20260922T160000Z_00dc8836d82f · protocol 2026-09-22 · engine 0.1.0</p>
+    <div class="verdict">
+      <div>
+        <p class="kicker">Market classification</p>
+        <b>INSUFFICIENT DATA</b>
+        <p>A market call is refused when the dataset is synthetic, the audit fails, financing was not measured, or the point in time does not support one. Refusal is a result.</p>
+      </div>
+      <div>
+        <p class="kicker">Laboratory process</p>
+        <b>NO EDGE</b>
+        <p>This label describes the named dataset under the frozen rule. It is not permission to trade, and it is not a claim about a later year.</p>
+      </div>
+    </div>
+    <p>The frozen agreement rule produced no trades. The file is not market data, so the market classification stays insufficient. The locked year was not examined. Nothing in this record authorizes a live order.</p>
+    <h3>Claim ladder</h3>
+    <dl class="ladder">
+      <dt>Fact</dt>
+      <dd>The engine cannot place an order. The live OANDA host is rejected in code. In-sample performance was not computed. Holdout examined: no.</dd>
+      <dt>Measurement</dt>
+      <dd>Dataset SYNTHETIC_LAB_EURUSD_H1_V1, source SYNTHETIC, 56304 bars. Bar opens run from 2010-01-04T00:00:00Z to 2018-12-31T23:00:00Z. Quality PASS. Synthetic: yes.</dd>
+      <dt>Historical evidence</dt>
+      <dd>Out-of-sample trades only, concatenated by procedure. Expanding trades: 0. Rolling trades: 0. These are counts, not a promise they will recur.</dd>
+      <dt>Model estimate</dt>
+      <dd>Logistic scores are one-versus-rest estimates normalized to sum to one. Nearest-neighbor shares are distance-weighted frequencies of past labels. Neither is a calibrated probability.</dd>
+      <dt>Hypothesis</dt>
+      <dd>On a completed H1 bar, the causal normalized state of price, volatility, spread, and session does not contain enough information to justify a long or short barrier trade after bid/ask execution, declared slippage, declared adverse financing, and commission, once training labels that overlap the test window have been purged.</dd>
+      <dt>Uncertainty</dt>
+      <dd>This timestamp belongs to a synthetic laboratory clock. Nothing in the package is evidence about a traded market. OHLC bars do not reveal which barrier printed first inside a single bar. Probabilities are not calibrated. Nearest-neighbor outcomes are a sample, not a destiny. Slippage and financing in this package follow the frozen declaration, not a measured swap curve, unless financing_measured is true. A bias at one timestamp is not walk-forward evidence.</dd>
+    </dl>
+    <h2>Out-of-sample ledger</h2>
+    <p>Decisions evaluated: 2021. A decision with no trade is the frozen rule refusing, not a missing calculation. Holdout bars withheld: 6264, years [2018].</p>
+    <p>The principal comparison is expanding versus rolling. Neither was chosen after seeing the other win. Flat days are inside the Sharpe-type ratio, which is descriptive and is not a significance test.</p>
+    <h3>Model estimates, before the agreement rule</h3><p class='meta'>Expanding-window decisions only. A high neighbor share that the logistic model does not confirm stays a no-trade.</p><table><thead><tr><th>Estimate</th><th class='num'>Min</th><th class='num'>Mean</th><th class='num'>Max</th></tr></thead><tbody><tr><td>Logistic, long</td><td class='num'>0.291</td><td class='num'>0.336</td><td class='num'>0.396</td></tr><tr><td>Logistic, short</td><td class='num'>0.303</td><td class='num'>0.335</td><td class='num'>0.365</td></tr><tr><td>Neighbors, long</td><td class='num'>0.190</td><td class='num'>0.477</td><td class='num'>0.763</td></tr><tr><td>Neighbors, short</td><td class='num'>0.123</td><td class='num'>0.482</td><td class='num'>0.810</td></tr></tbody></table>
+    <table><thead><tr><th>Measurement</th><th class='num'>Expanding</th><th class='num'>Rolling</th></tr></thead><tbody><tr><td>Trades</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>Net pips</td><td class='num'>0.00</td><td class='num'>0.00</td></tr><tr><td>Expectancy, pips</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Win rate</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Profit factor</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Sharpe-type</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Sortino-type</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Max drawdown, pips</td><td class='num'>0.00</td><td class='num'>0.00</td></tr><tr><td>Max drawdown, fraction</td><td class='num'>0.000</td><td class='num'>0.000</td></tr><tr><td>Average holding, bars</td><td class='num'>—</td><td class='num'>—</td></tr><tr><td>Exposure</td><td class='num'>0.000</td><td class='num'>0.000</td></tr><tr><td>Cost drag, pips</td><td class='num'>0.00</td><td class='num'>0.00</td></tr><tr><td>Longest losing streak</td><td class='num'>0</td><td class='num'>0</td></tr></tbody></table>
+    <h3>Expanding window, by year</h3>
+    <p class='meta'>No out-of-sample trades to split by year.</p>
+    <h3>Equity, expanding window</h3>
+    <p class='meta'>No trades. An empty ledger is preferable to a curve fitted to noise and then described as skill.</p>
+    <h3>Equity, rolling window</h3>
+    <p class='meta'>No trades. An empty ledger is preferable to a curve fitted to noise and then described as skill.</p>
+    <h3>Folds</h3>
+    <table><thead><tr><th>Procedure</th><th>Train</th><th class='num'>Test</th><th class='num'>Train rows</th><th class='num'>Embargoed</th><th class='num'>Test rows</th><th class='num'>Trades</th><th class='num'>Retrieval violations</th></tr></thead><tbody><tr><td>expanding</td><td>2010–2014</td><td class='num'>2015</td><td class='num'>1239</td><td class='num'>1</td><td class='num'>261</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>rolling</td><td>2010–2014</td><td class='num'>2015</td><td class='num'>1239</td><td class='num'>1</td><td class='num'>261</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>expanding</td><td>2010–2015</td><td class='num'>2016</td><td class='num'>1500</td><td class='num'>1</td><td class='num'>261</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>rolling</td><td>2011–2015</td><td class='num'>2016</td><td class='num'>1303</td><td class='num'>1</td><td class='num'>261</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>expanding</td><td>2010–2016</td><td class='num'>2017</td><td class='num'>1761</td><td class='num'>1</td><td class='num'>259</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td>rolling</td><td>2012–2016</td><td class='num'>2017</td><td class='num'>1304</td><td class='num'>1</td><td class='num'>259</td><td class='num'>0</td><td class='num'>0</td></tr></tbody></table>
+    <h2>Costs and stresses</h2>
+    <p>Net pips already use the bid for a long exit and the ask for a short exit. Spread is not subtracted a second time. Extra slippage, adverse financing, and commission are explicit. Financing measured from a swap history: no — the laboratory figure is an adverse declaration.</p>
+    <table><tbody><tr><td>2× slippage, net pips</td><td class='num'>—</td></tr><tr><td>2× slippage, expectancy</td><td class='num'>—</td></tr><tr><td>Net without best five trades</td><td class='num'>0.00</td></tr><tr><td>Sign flips without best five</td><td class='num'>False</td></tr><tr><td>Best year share of net</td><td class='num'>—</td></tr></tbody></table><p class='meta'>These stresses do not choose a new parameter. The frozen rule remains the principal result.</p>
+    <h2>Audit</h2>
+    <p>Valid: <strong class="pass">True</strong>. A failed audit invalidates the experiment. It is not explained away.</p>
+    <ul>
+      <li class='meta'>IN_SAMPLE_NOT_COMPUTED</li><li class='meta'>HOLDOUT_NOT_EXAMINED</li>
+    </ul>
+    <p class="meta">Feature prefix checks at bar indices [1535, 1559, 1583].</p>
+    <h2>Point in time</h2>
+    <p>The object below is the last expanding-window decision in the research sample. If the dataset is synthetic, its research classification stays insufficient. Agreement between models, if any, is an estimate about the laboratory process.</p>
+    <pre class="json">{
+  &quot;agreement&quot;: {
+    &quot;event_vs_market&quot;: null,
+    &quot;quant_vs_rag&quot;: false
+  },
+  &quot;analogue_detail_note&quot;: &quot;The package reports the outcome distribution of the retrieved neighbours. Individual analogue timestamps are not copied into this summary row.&quot;,
+  &quot;analogue_detail_retained&quot;: false,
+  &quot;confidence&quot;: 0.0,
+  &quot;decision_time_definition&quot;: &quot;bar_close_utc&quot;,
+  &quot;event_memory&quot;: {
+    &quot;active_event&quot;: null,
+    &quot;future_information_detected&quot;: false,
+    &quot;historical_analogues&quot;: []
+  },
+  &quot;evidence_summary&quot;: &quot;At 2017-12-29T00:00:00Z the measurable regime label is NORMAL (heuristic confidence 0.4, not a probability). Logistic estimates \u2014 LONG_SUCCESS 0.313, SHORT_SUCCESS 0.341, NO_RESOLUTION 0.000, AMBIGUOUS_PATH 0.346 \u2014 are model output, not frequencies. Euclidean memory returned 25 prior states with cutoff verified True. Median analogue forward midpoint return: -0.000929. Event memory contributed 0 usable events. Classification INSUFFICIENT_DATA is a research label. It is not an order.&quot;,
+  &quot;instrument&quot;: &quot;EUR_USD&quot;,
+  &quot;live_execution&quot;: false,
+  &quot;market_memory&quot;: {
+    &quot;cosine_used_for_classification&quot;: false,
+    &quot;historical_cutoff_verified&quot;: true,
+    &quot;matches&quot;: 25,
+    &quot;median_forward_outcome&quot;: -0.000929323297056972,
+    &quot;negative_outcome_probability&quot;: 0.6,
+    &quot;positive_outcome_probability&quot;: 0.4,
+    &quot;retrieval&quot;: &quot;euclidean&quot;
+  },
+  &quot;quant_model&quot;: {
+    &quot;ambiguous_path_probability&quot;: 0.34617629519911064,
+    &quot;long_probability&quot;: 0.31300849368463396,
+    &quot;no_trade_probability&quot;: 0.0,
+    &quot;probability_kind&quot;: &quot;ovr_normalized_estimate&quot;,
+    &quot;short_probability&quot;: 0.34081521111625535
+  },
+  &quot;regime&quot;: {
+    &quot;classification&quot;: &quot;NORMAL&quot;,
+    &quot;confidence&quot;: 0.4,
+    &quot;confidence_kind&quot;: &quot;heuristic_not_probability&quot;
+  },
+  &quot;research_classification&quot;: &quot;INSUFFICIENT_DATA&quot;,
+  &quot;research_only&quot;: true,
+  &quot;risk_flags&quot;: [
+    &quot;RESEARCH_ONLY&quot;,
+    &quot;NOT_A_TRADE_INSTRUCTION&quot;,
+    &quot;LIVE_EXECUTION_DISABLED&quot;,
+    &quot;SYNTHETIC_DATA&quot;,
+    &quot;FINANCING_NOT_MEASURED&quot;,
+    &quot;SLIPPAGE_IS_ASSUMPTION&quot;
+  ],
+  &quot;timeframe&quot;: &quot;H1&quot;,
+  &quot;timestamp&quot;: &quot;2017-12-29T00:00:00Z&quot;,
+  &quot;uncertainty&quot;: &quot;This timestamp belongs to a synthetic laboratory clock. Nothing in the package is evidence about a traded market. OHLC bars do not reveal which barrier printed first inside a single bar. Probabilities are not calibrated. Nearest-neighbor outcomes are a sample, not a destiny. Slippage and financing in this package follow the frozen declaration, not a measured swap curve, unless financing_measured is true. A bias at one timestamp is not walk-forward evidence.&quot;
+}</pre>
+    <h2>Protocol</h2>
+    <p>The future does not get to train the past. At a simulated close T, features, scalers, neighbors, event records, and the decision rule may use only what a careful observer could have known. Neighbor outcomes must already have finished. Training labels that reach into the test year are embargoed. The final year in the file is not a tuning set.</p>
+    <div class="layers">
+      <div class="layer"><span>01</span>Market data. Bid and ask, UTC, immutable once hashed. Missing sides are not invented.</div>
+      <div class="layer"><span>02</span>Features. Returns scaled by volatility, distances scaled by ATR, causal percentiles.</div>
+      <div class="layer"><span>03</span>Market memory. Prior states only. Outcomes are labels, never inputs to similarity.</div>
+      <div class="layer"><span>04</span>Event memory. Separate clock. Unverified times are unsafe and excluded.</div>
+      <div class="layer"><span>05</span>Baselines. Logistic regression and nearest neighbors. A story is not a third model.</div>
+      <div class="layer"><span>06</span>Walk-forward. Expanding and rolling. Principal curve is out-of-sample only.</div>
+    </div>
+    <h2>What this is not</h2>
+    <ul>
+      <li>One instrument and one timeframe. A result does not transfer to the rest of the universe.</li><li>In-sample fit is not reported, because it is not evidence.</li><li>The locked final year is not scored by the research command.</li><li>Same-bar barrier order is unidentified. Those paths are ambiguous, not wins.</li><li>Financing in the laboratory settings is an adverse declaration, not a measured swap.</li><li>Slippage is an assumption. The quote spread is taken from the bar, where the bar has a bid and an ask.</li><li>Logistic outputs are regularized one-versus-rest scores normalized to sum to one. They are not calibrated probabilities.</li><li>Euclidean retrieval is the pre-registered memory method. Cosine is reported and is not used to pick a result.</li><li>Sharpe-type and Sortino-type ratios are descriptive. Overlapping volatility means the returns are not independent.</li><li>Session flags use a local 08:00-17:00 research convention, not an exchange session definition.</li><li>No cross-asset feature is used. Risk-on and risk-off are therefore not classified.</li><li>A language model is not allowed to replace this calculation or to invent a price.</li>
+      <li>Not an adviser, not a broker, not a portfolio manager, and not a live execution system.</li>
+    </ul>
+    <h2>Reproduce</h2>
+    <p>From the repository root, with Python 3.11:</p>
+    <pre class="json">python3 -m unittest discover -s tests
+python3 -m aegis lab-run</pre>
+    <p>An OANDA practice token, if you supply one in the environment, is used only for <span style="font-family: 'IBM Plex Mono', monospace">GET /v3/instruments/{instrument}/candles</span> on the practice host. The client has no order method. Do not commit the token.</p>
+    <footer>
+      Published as a research instrument on Mangjit Singh's site. Historical similarity is evidence, not destiny.
+      A positive laboratory ledger would still not authorize a live order.
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "dataset_id": "SYNTHETIC_LAB_EURUSD_H1_V1",
+  "drift": 0.0,
+  "end": "2018-12-31T23:00:00Z",
+  "event_join_allowed": false,
+  "generator_version": "synthetic_zero_drift_v1",
+  "granularity": "H1",
+  "immutable": true,
+  "instrument": "EUR_USD",
+  "not_market_data": true,
+  "notes": "Laboratory clock uses 2010-2018 weekday labels so walk-forward year splits can be tested. These timestamps are not historical market dates. Do not join this file to the real event catalog. Do not describe a result from this file as evidence about EUR/USD.",
+  "process": "zero_drift_log_price_with_ar1_volatility",
+  "rows": 56304,
+  "seed": 20260922,
+  "sha256": "e8b5a294111983c8897363c5baf45c8798c36649b66edb6fe7344e2608c9bcba",
+  "source": "SYNTHETIC",
+  "start": "2010-01-04T00:00:00Z",
+  "synthetic": true,
+  "timestamp_meaning": "bar_open_utc",
+  "volume_is_proxy": true,
+  "written_at_utc": "2026-09-22T15:56:40Z"
+}

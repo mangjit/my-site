@@ -1,0 +1,5 @@
+This run is kept. It is not the principal bulletin.
+
+The fold clock used the bar-close year. The last laboratory bar closes at 2019-01-01T00:00:00Z, so the locked "year" was 2019 and contained one bar. 2018 was then scored as an ordinary test year. That violates the locked-holdout rule even though the audit of retrieval timestamps passed and the frozen rule produced no trades.
+
+The engine was corrected to assign folds by bar-open year, and to withhold any bar whose close falls inside the holdout year. A later experiment is the one published on the site. Do not delete this record.
